@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/main_fragment">
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="example.android.exam.examcp1.fragment.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_move_to_second"
+            app:destination="@id/second_activity" />
+
+        <action
+            android:id="@+id/action_show_main_dialog"
+            app:destination="@id/dialog_main" />
+
+        <action
+            android:id="@+id/action_move_to_second_fragment"
+            app:destination="@id/second_fragment" />
+
+    </fragment>
+
+    <activity
+        android:id="@+id/second_activity"
+        android:name="example.android.exam.examcp1.activity.SecondActivity"
+        android:label="SecondActivity"
+        app:action="android.intent.action.VIEW"
+        app:data="https://example.com"
+        app:targetPackage="${applicationId}"
+        tools:layout="@layout/activity_second">
+
+        <argument
+            android:name="secondData"
+            android:defaultValue="@null"
+            app:argType="example.android.exam.examcp1.model.SecondData"
+            app:nullable="true" />
+    </activity>
+
+    <fragment
+        android:id="@+id/second_fragment"
+        android:name="example.android.exam.examcp1.fragment.SecondFragment"
+        android:label="SecondFragment"
+        tools:layout="@layout/fragment_second" />
+
+    <dialog
+        android:id="@+id/dialog_main"
+        android:name="example.android.exam.examcp1.dialog.MainDialog"
+        tools:layout="MainDialog">
+        <argument
+            android:name="dialogData"
+            android:defaultValue="@null"
+            app:argType="example.android.exam.examcp1.model.DialogData"
+            app:nullable="true" />
+    </dialog>
+
+</navigation>
