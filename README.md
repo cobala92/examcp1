@@ -5,4 +5,4 @@
      - move to second activity with data in action
      - move to second activity with data bundle
      - move to dialog with data arguments
-     - move to second frgment and handle back action in secondFragnent.
+     - move to second fragment and handle back action in secondFragnent.
